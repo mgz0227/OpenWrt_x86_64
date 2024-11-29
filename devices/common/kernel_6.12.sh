@@ -1,6 +1,6 @@
 shopt -s extglob
 
-
+rm -rf target/linux/x86/Makefile
 rm -rf target/linux/ath79
 rm -rf target/linux/generic/*
 rm -rf target/linux/x86/*
