@@ -23,7 +23,7 @@ wget -N https://raw.githubusercontent.com/mgz0227/Openwrt_6.12/main/target/linux
 #wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/lantiq/ltq-ptm/src/ifxmips_ptm_adsl.c
 #wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/lantiq/ltq-ptm/src/ifxmips_ptm_vdsl.c
 #wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/ubootenv-nvram/src/ubootenv-nvram.c
-wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/include/kernel-6.12
+wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/include/kernel-6.12 include
 
 
 cat target/linux/x86/Makefile
