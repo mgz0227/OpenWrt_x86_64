@@ -3,10 +3,11 @@
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
 #bash $SHELL_FOLDER/../common/kernel_6.6.sh
-
+rm -rf target/*
 git_clone_path master https://github.com/coolsnowwolf/lede target/linux/x86/files target/linux/x86/patches-6.12
 git_clone_path main https://github.com/mgz0227/Openwrt_6.12 package package
 git_clone_path main https://github.com/mgz0227/Openwrt_6.12 target target
+
 
 wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/x86/base-files/etc/board.d/02_network -P target/linux/x86/base-files/etc/board.d/
 
