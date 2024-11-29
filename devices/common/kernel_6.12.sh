@@ -1,12 +1,12 @@
 shopt -s extglob
 
-rm -rf include/*
+
 
 rm -rf target/linux/generic/*
 rm -rf target/linux/x86/*
 
 rm -rf package/kernel/linux/modules/*
-git_clone_path 6.12 https://github.com/namiltd/openwrt include include
+
 git_clone_path 6.12 https://github.com/namiltd/openwrt package package
 git_clone_path 6.12 https://github.com/namiltd/openwrt target/linux/generic target/linux/generic
 git_clone_path 6.12 https://github.com/namiltd/openwrt target/linux/x86 target/linux/x86
@@ -23,7 +23,7 @@ wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/la
 wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/lantiq/ltq-ptm/src/ifxmips_ptm_adsl.c
 wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/lantiq/ltq-ptm/src/ifxmips_ptm_vdsl.c
 wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/ubootenv-nvram/src/ubootenv-nvram.c
-
+wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/include/kernel-6.12
 
 
 cat target/linux/x86/Makefile
