@@ -131,18 +131,27 @@
  	$(OPKG) install $(firstword $(wildcard $(LINUX_DIR)/libc_*.ipk $(PACKAGE_DIR)/libc_*.ipk))
  	$(OPKG) install $(firstword $(wildcard $(LINUX_DIR)/kernel_*.ipk $(PACKAGE_DIR)/kernel_*.ipk))
 -	$(OPKG) install $(BUILD_PACKAGES)
-+	$(OPKG) install $(BUILD_PACKAGES) luci-i18n-base-zh-cn || true
++	$(OPKG) install --force-maintainer $(BUILD_PACKAGES) luci-i18n-base-zh-cn || true
 +	$(if $(USER_FILES), \
 +	find $(USER_FILES) -name "*.ipk" -print0 | \
 +	while IFS= read -r -d '' ipk; do \
 +      $(OPKG) install "$$ipk" && rm -f "$$ipk" || true; \
 +	done; \
 +	)
-+	$(OPKG) install --force-maintainer --force-reinstall my-default-settings
++	$(OPKG) install --force-maintainer --force-reinstall my-default-settings 2>/dev/null
  else
  	$(APK) add --no-scripts $(firstword $(wildcard $(LINUX_DIR)/libc-*.apk $(PACKAGE_DIR)/libc-*.apk))
  	$(APK) add --no-scripts $(firstword $(wildcard $(LINUX_DIR)/kernel-*.apk $(PACKAGE_DIR)/kernel-*.apk))
-@@ -254,6 +284,9 @@ else
+@@ -237,7 +267,7 @@ prepare_rootfs: FORCE
+ 	@echo
+ 	@echo Finalizing root filesystem...
+ 
+-	$(CP) $(TARGET_DIR) $(TARGET_DIR_ORIG)
++	mkdir -p "$(TARGET_DIR_ORIG)" && (tar -C "$(TARGET_DIR)" -cf - .) | pv -trab --buffer-size 100M | (tar -C "$(TARGET_DIR_ORIG)" -xf - .)
+ ifeq ($(CONFIG_USE_APK),)
+ 	$(if $(CONFIG_SIGNATURE_CHECK), \
+ 		$(if $(ADD_LOCAL_KEY), \
+@@ -254,16 +284,19 @@ else
  	)
  endif
  	$(call prepare_rootfs,$(TARGET_DIR),$(USER_FILES),$(DISABLED_SERVICES))
@@ -152,3 +161,15 @@
  
  build_image: FORCE
  	@echo
+ 	@echo Building images...
+ 	rm -rf $(BUILD_DIR)/json_info_files/
+ 	if [ -d "target/linux/feeds/$(BOARD)" ]; then \
+-		$(NO_TRACE_MAKE) -C target/linux/feeds/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
++		nice $(NO_TRACE_MAKE) -C target/linux/feeds/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
+ 			$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)"); \
+ 	else \
+-		$(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
++		nice $(NO_TRACE_MAKE) -C target/linux/$(BOARD)/image install TARGET_BUILD=1 IB=1 EXTRA_IMAGE_NAME="$(EXTRA_IMAGE_NAME)" \
+ 			$(if $(USER_PROFILE),PROFILE="$(USER_PROFILE)"); \
+ 	fi
+ 
