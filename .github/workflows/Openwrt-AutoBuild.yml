@@ -187,6 +187,8 @@ jobs:
         cd openwrt
         chmod +x devices/common/$DIY_SH
         /bin/bash "devices/common/$DIY_SH"
+        chmod +x ./scripts/feeds
+
         cp -f devices/common/$CONFIG_FILE .config
         if [ -f "devices/${{matrix.target}}/$CONFIG_FILE" ]; then
           echo >> .config
