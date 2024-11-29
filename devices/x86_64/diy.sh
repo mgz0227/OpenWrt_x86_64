@@ -2,7 +2,7 @@
 
 SHELL_FOLDER=$(dirname $(readlink -f "$0"))
 
-#bash $SHELL_FOLDER/../common/kernel_6.6.sh
+bash $SHELL_FOLDER/../common/kernel_6.12.sh
 
 
 wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/x86/base-files/etc/board.d/02_network -P target/linux/x86/base-files/etc/board.d/
