@@ -5,12 +5,12 @@ shopt -s extglob
 rm -rf target/linux/generic/*
 rm -rf target/linux/x86/*
 
-rm -rf package/kernel/linux/modules/*
+#rm -rf package/kernel/linux/modules/*
 
 git_clone_path 6.12 https://github.com/namiltd/openwrt package package
 git_clone_path 6.12 https://github.com/namiltd/openwrt target/linux/generic target/linux/generic
 git_clone_path 6.12 https://github.com/namiltd/openwrt target/linux/x86 target/linux/x86
-git_clone_path 6.12 https://github.com/namiltd/openwrt package/kernel/linux/modules package/kernel/linux/modules
+#git_clone_path 6.12 https://github.com/namiltd/openwrt package/kernel/linux/modules package/kernel/linux/modules
 
 
 
