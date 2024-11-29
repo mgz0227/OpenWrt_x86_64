@@ -1,10 +1,11 @@
 #!/bin/bash
 #=================================================
 shopt -s extglob
-rm -rf target/*
+
 git_clone_path master https://github.com/coolsnowwolf/lede target/linux/x86/files target/linux/x86/patches-6.12
 git_clone_path main https://github.com/mgz0227/Openwrt_6.12 package package
-git_clone_path main https://github.com/mgz0227/Openwrt_6.12 target target
+git_clone_path main https://github.com/mgz0227/Openwrt_6.12 target/linux/x86 target/target/linux/x86
+wget -N https://raw.githubusercontent.com/mgz0227/Openwrt_6.12/main/target/linux/x86/Makefile -P target/linux/x86
 
 sed -i '$a src-git miaogongzi https://github.com/mgz0227/OP-Packages.git;master' feeds.conf.default
 sed -i "/telephony/d" feeds.conf.default
