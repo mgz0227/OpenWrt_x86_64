@@ -7,7 +7,7 @@ rm -rf target/linux/x86/*
 
 
 rm -rf package/devel/perf/*
-
+rm -rf package/devel/perf
 
 rm -rf package/kernel/linux/modules/*
 git_clone_path 6.12 https://github.com/namiltd/openwrt include include
@@ -16,7 +16,7 @@ git_clone_path 6.12 https://github.com/namiltd/openwrt target/linux/generic targ
 git_clone_path 6.12 https://github.com/namiltd/openwrt target/linux/x86 target/linux/x86
 git_clone_path 6.12 https://github.com/namiltd/openwrt package/kernel/linux/modules package/kernel/linux/modules
 
-wget -N https://raw.githubusercontent.com/openwrt/openwrt/main/package/devel/perf/Makefile -P package/devel/perf
+#wget -N https://raw.githubusercontent.com/openwrt/openwrt/main/package/devel/perf/Makefile -P package/devel/perf
 
 wget -N https://raw.githubusercontent.com/mgz0227/Openwrt_6.12/main/target/linux/x86/Makefile -P target/linux/x86
 wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c -P package/kernel/gpio-button-hotplug/src
