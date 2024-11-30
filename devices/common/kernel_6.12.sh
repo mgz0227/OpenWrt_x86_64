@@ -31,3 +31,9 @@ wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/package/kernel/ub
 wget -N https://raw.githubusercontent.com/namiltd/openwrt/6.12/include/kernel-6.12 -P include
 
 cat target/linux/x86/Makefile
+
+cd feeds/packages
+
+git_clone_path main https://github.com/openwrt/openwrt libs/libtraceevent
+
+cd ../../
