@@ -5,7 +5,7 @@ rm -rf include/*
 rm -rf target/linux/generic/*
 rm -rf target/linux/x86/*
 
-rm -rf feeds/miaogongzi/quectel_MHI
+
 rm -rf package/devel/perf/*
 rm -rf package/devel/perf
 
