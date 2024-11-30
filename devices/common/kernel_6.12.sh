@@ -5,6 +5,10 @@ rm -rf include/*
 rm -rf target/linux/generic/*
 rm -rf target/linux/x86/*
 
+
+rm -rf package/devel/perf
+
+
 rm -rf package/kernel/linux/modules/*
 git_clone_path 6.12 https://github.com/namiltd/openwrt include include
 git_clone_path 6.12 https://github.com/namiltd/openwrt package package
