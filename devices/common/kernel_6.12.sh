@@ -7,9 +7,7 @@ rm -rf target/linux/x86/*
 
 
 
-rm -rf package/kernel/mac80211
-rm -rf feeds/packages/kernel/ovpn-dco
-rm -rf feeds/packages/xr_usb_serial_common 
+
 rm -rf package/devel/perf/*
 rm -rf package/devel/perf
 
