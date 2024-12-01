@@ -13,6 +13,7 @@ sed -i '/	refresh_config();/d' scripts/feeds
 ./scripts/feeds install -a -p miaogongzi -f
 ./scripts/feeds install -a
 
+rm -rf feeds/packages/kernel/ovpn-dco
 rm -rf package/base-files
 mv -f feeds/miaogongzi/base-files package/
 
