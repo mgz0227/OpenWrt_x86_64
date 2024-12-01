@@ -5,7 +5,8 @@ rm -rf include/*
 rm -rf target/linux/generic/*
 rm -rf target/linux/x86/*
 
-
+rm -rf package/kernel/nat46
+rm -rf package/kernel/nat46/*
 
 
 rm -rf package/devel/perf/*
