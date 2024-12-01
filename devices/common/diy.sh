@@ -17,7 +17,7 @@ rm -rf package/kernel/mac80211
 rm -rf feeds/packages/kernel/ovpn-dco
 rm -rf feeds/packages/xr_usb_serial_common 
 rm -rf feeds/packages/libs/xr_usb_serial_common
-rm -rf feeds/packages/net/openvswitc
+rm -rf feeds/packages/net/openvswitch
 
 rm -rf package/base-files
 mv -f feeds/miaogongzi/base-files package/
