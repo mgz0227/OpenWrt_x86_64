@@ -13,6 +13,9 @@ sed -i '/	refresh_config();/d' scripts/feeds
 ./scripts/feeds install -a -p miaogongzi -f
 ./scripts/feeds install -a
 
+rm -rf package/kernel/mac80211
+rm -rf feeds/packages/kernel/ovpn-dco
+rm -rf feeds/packages/xr_usb_serial_common 
 
 rm -rf package/base-files
 mv -f feeds/miaogongzi/base-files package/
