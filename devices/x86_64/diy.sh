@@ -31,6 +31,12 @@ rm -rf feeds/base/lean
 #wget -N https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/kernel/linux/modules/usb.mk -P package/kernel/linux/modules/
 wget -N https://raw.githubusercontent.com/mgz0227/openwrt/main/include/kernel-6.12 -P include/
 
+
+wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/target/linux/x86/image/Makefile -P target/linux/x86/image/
+wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/feeds/luci/luci.mk -P feeds/luci/
+wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/include/target.mk -P include/
+
+
 #结束
 
 sed -i 's/kmod-r8169/kmod-r8168/' target/linux/x86/image/64.mk
