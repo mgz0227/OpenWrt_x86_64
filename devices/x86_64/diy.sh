@@ -37,7 +37,7 @@ wget -N  https://raw.githubusercontent.com/openwrt/luci/openwrt-24.10/luci.mk -P
 wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/include/target.mk -P include/
 wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/package/network/utils/iptables/Makefile -P package/network/utils/iptables/
 wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/package/network/utils/iptables/Makefile -P feeds/base/network/utils/iptables/
-wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/package/kernel/linux/Makefile -P package/kernel/linux/
+#wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/package/kernel/linux/Makefile -P package/kernel/linux/
 #结束
 
 sed -i 's/kmod-r8169/kmod-r8168/' target/linux/x86/image/64.mk
