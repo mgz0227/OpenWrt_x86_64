@@ -33,7 +33,7 @@ wget -N https://raw.githubusercontent.com/mgz0227/openwrt/main/include/kernel-6.
 
 
 wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/target/linux/x86/image/Makefile -P target/linux/x86/image/
-wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/feeds/luci/luci.mk -P feeds/luci/
+wget -N  https://raw.githubusercontent.com/openwrt/luci/openwrt-24.10/luci.mk -P feeds/luci/
 wget -N  https://raw.githubusercontent.com/openwrt/openwrt/openwrt-24.10/include/target.mk -P include/
 
 
